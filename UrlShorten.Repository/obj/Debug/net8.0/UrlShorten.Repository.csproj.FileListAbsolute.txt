@@ -1,0 +1,15 @@
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\bin\Debug\net8.0\UrlShorten.Repository.deps.json
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\bin\Debug\net8.0\UrlShorten.Repository.dll
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\bin\Debug\net8.0\UrlShorten.Repository.pdb
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.AssemblyInfoInputs.cache
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.AssemblyInfo.cs
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.csproj.CoreCompileInputs.cache
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.dll
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\refint\UrlShorten.Repository.dll
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.pdb
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\ref\UrlShorten.Repository.dll
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\bin\Debug\net8.0\UrlShorten.Data.dll
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\bin\Debug\net8.0\UrlShorten.Data.pdb
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.csproj.AssemblyReference.cache
+D:\my_source_code\C#\UrlShorten.Solution\UrlShorten.Repository\obj\Debug\net8.0\UrlShorten.Repository.csproj.CopyComplete

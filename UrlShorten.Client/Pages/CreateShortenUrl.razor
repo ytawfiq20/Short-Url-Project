@@ -1,0 +1,136 @@
+﻿@using UrlShorten.Client.Service.ShortenUrlService
+@using UrlShorten.Data.DTO
+@using CurrieTechnologies.Razor.Clipboard
+
+@inherits ComponentBase
+@inject IUrl _urlService
+@inject ClipboardService clipboard
+
+
+
+
+
+<div class="container" style="background-color: #ecf0f1; padding:5%">
+    <div class="row">
+        <a href="/" style="text-align: center; color: blueviolet; font-size: 50px;">
+            Short URL
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <h3 style="padding-left:2%;">Paste URL</h3>
+        </div>
+    </div>
+    <div class="row">
+            <EditForm Model="userUrlInputDto" OnValidSubmit="CreateChortenUrl">
+                <Blazored.FluentValidation.FluentValidationValidator />
+                <ValidationSummary />
+                <div class="row">
+
+
+                <div class="input-group mb-3">
+                    <InputText @bind-Value=@userUrlInputDto.InputUrl class="form-control" placeholder="Enter Url" />
+                    <ValidationMessage For="@(()=>userUrlInputDto.InputUrl)" />
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit"> Generate short url</button>
+                    </div>
+                </div>
+
+                    
+                </div>
+               
+            </EditForm>
+    </div>
+</div>
+
+<div class="container" style="padding:5%;">
+    <div class="row">
+        <div class="col-sm">
+            <h3 style="padding-left:2%;">New URL</h3>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+            </div>
+            <InputText @bind-Value=@shortUrl id="myInput" class="form-control"/>
+
+            @if (created)
+            {
+                <button class="btn btn-success" @onclick="() => GetNewUrl()">Get New Url</button>
+
+            }
+            </div>
+        
+    </div>
+</div>
+
+
+
+
+<script>
+    function myFunction() {
+        // Get the text field
+        var copyText = document.getElementById("myInput");
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+
+        // Alert the copied text
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
+
+
+<Footer />
+
+@code {
+
+
+    private UserUrlInputDto userUrlInputDto { get; set; } = new();
+
+    private bool created = false;
+
+    private string shortUrl { get; set; } = string.Empty;
+
+    private async Task CreateChortenUrl()
+    {
+        string response = await _urlService.CreateShortenUrlForUserInputUrl(userUrlInputDto);
+        shortUrl = GetShortUrlFromResponse(response);
+        created = true;
+    }
+
+    private async Task GetNewUrl()
+    {
+        string response = await _urlService.GetNewShortenUrlForExisitingLink(userUrlInputDto);
+        shortUrl = GetShortUrlFromResponse(response);
+    }
+
+
+    private string GetShortUrlFromResponse(string response)
+    {
+        // Response
+        //{"isSuccess":true,
+        // "message":"Shorten url created successfully: (https://localhost:7116/5c871ea6)."
+        // ,"statusCode":200,
+        // "createdAt":"2024-03-03T16:29:24.9971845+02:00",
+        // "longUrl":"https://www.google.com/search?q=gfd&oq=gfd&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTILCAEQABgBGAoYgAQyCwgCEAAYARgKGIAEMg4IAxAuGAEYChjUAhiABDIOCAQQLhgBGAoY1AIYgAQyCwgFEAAYARgKGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgkICBAAGAoYgAQyCwgJEC4YARgKGIAE0gEIMTc3NmowajKoAgCwAgA&sourceid=chrome&ie=UTF-8",
+        // "value":{"id":"317d7ae6-9a72-4d44-1154-08dc3b8ddc23",
+        // "inputUrl":"https://www.google.com/search?q=gfd&oq=gfd&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTILCAEQABgBGAoYgAQyCwgCEAAYARgKGIAEMg4IAxAuGAEYChjUAhiABDIOCAQQLhgBGAoY1AIYgAQyCwgFEAAYARgKGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgkICBAAGAoYgAQyCwgJEC4YARgKGIAE0gEIMTc3NmowajKoAgCwAgA&sourceid=chrome&ie=UTF-8"
+        // ,"shortenUrl":"https://localhost:7116/5c871ea6"}}
+
+        string[] splitResponse = response.Split('"');
+        string shortUrl = splitResponse[splitResponse.Length - 2];
+        return shortUrl;
+
+    }
+
+}

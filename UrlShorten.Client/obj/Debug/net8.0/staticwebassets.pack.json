@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\obj\\Debug\\net8.0\\compressed\\qfcsyu4qol.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UrlShorten.Client.styles.css",
+      "PackagePath": "staticwebassets\\UrlShorten.Client.styles.css"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\my_source_code\\C#\\UrlShorten.Solution\\UrlShorten.Client\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.UrlShorten.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.UrlShorten.Client.props",
+      "PackagePath": "build\\UrlShorten.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.UrlShorten.Client.props",
+      "PackagePath": "buildMultiTargeting\\UrlShorten.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.UrlShorten.Client.props",
+      "PackagePath": "buildTransitive\\UrlShorten.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

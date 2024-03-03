@@ -1,0 +1,66 @@
+﻿
+@page "/bitly"
+
+@using UrlShorten.Client.Service.ShortenUrlService
+@using UrlShorten.Client.Service.ThirdPartyService
+@using UrlShorten.Data.DTO
+@using CurrieTechnologies.Razor.Clipboard
+
+@inherits ComponentBase
+@inject IShortenUrlThirdParty _thirdPartyService
+@inject NavigationManager _navigation
+@inject ClipboardService clipboard
+
+<div class="container" style="background-color: #ecf0f1; padding:5%">
+    <div class="row">
+        <a href="/bitly" style="text-align: center; color: blueviolet; font-size: 50px;">
+            Short URL Bitly Third Party
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <h3 style="padding-left:2%;">Paste URL</h3>
+        </div>
+    </div>
+    <div class="row">
+        <EditForm Model="userUrlInputDto" OnValidSubmit="CreateChortenUrl">
+            <Blazored.FluentValidation.FluentValidationValidator />
+            <ValidationSummary />
+            <div class="row">
+                <InputText @bind-Value=@userUrlInputDto.InputUrl class="form-control" placeholder="Enter Url"
+                           style="padding:2%;" />
+                <ValidationMessage For="@(()=>userUrlInputDto.InputUrl)" />
+                
+                <button class="btn btn-success" type="submit"> Generate short url</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+<div class="container" style="padding:5%;">
+    <div class="row">
+        <div class="col-sm">
+            <h3 style="padding-left:2%;">New URL</h3>
+        </div>
+    </div>
+    <div class="row">
+        <InputText @bind-Value=@shortenUrlDto.ShortenUrl class="form-control"
+                   style="padding:2%;" />
+    </div>
+</div>
+
+
+<Footer />
+
+@code {
+    private UserUrlInputDto userUrlInputDto { get; set; } = new();
+
+    private ShortenUrlDto shortenUrlDto { get; set; } = new();
+
+
+    private async Task CreateChortenUrl()
+    {
+        string s = await _thirdPartyService.ShortenUrlAsyncUsingBitly(userUrlInputDto.InputUrl); ;
+        shortenUrlDto = new ShortenUrlDto { ShortenUrl = s };
+    }
+}
